@@ -124,10 +124,12 @@ Explore the fully interactive, cloud-hosted visualization on Tableau Public:
 **Akash Yadav**  
 *Data Analyst | Business Intelligence & Visual Analytics*
 
+- **GitHub**: [@akash0189](https://github.com/akash0189)
+- **Repository**: [Food-Ordering-Behaviour-and-Consumer-Trend-](https://github.com/akash0189/Food-Ordering-Behaviour-and-Consumer-Trend-)
 - **Tableau Public Profile**: [akash.yadav1833](https://public.tableau.com/app/profile/akash.yadav1833)
-- **Dashboard Link**: [Food Ordering Behaviour and Consumer Trend](https://public.tableau.com/app/profile/akash.yadav1833/viz/FoodOrderingBehaviourAndConsumerTrend/Dashboard1?publish=yes)
+- **Live Dashboard**: [Food Ordering Behaviour and Consumer Trend](https://public.tableau.com/app/profile/akash.yadav1833/viz/FoodOrderingBehaviourAndConsumerTrend/Dashboard1?publish=yes)
 - **LinkedIn**: [Connect with Akash Yadav](https://www.linkedin.com/in/)
-- **Email**: Reach out via LinkedIn or GitHub
+- **Email**: Reach out via GitHub or LinkedIn
 
 ---
 
