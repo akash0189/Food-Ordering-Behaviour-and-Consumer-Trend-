@@ -1,0 +1,49 @@
+# =====================================================================
+# Tableau & Data Analytics .gitignore
+# =====================================================================
+
+# Tableau Temporary & Extract Cache Files
+*.tmp
+*.twb.files/
+*.tfl.files/
+*.hyper.tmp
+*~*.tmp
+CrashDumps/
+Logs/
+TabDocs/
+
+# Local Large Data Extracts & Files (Avoid pushing raw sensitive or massive data to VCS)
+*.hyper
+*.tdsx
+*.tde
+
+# Microsoft Office / Excel Temporary Lock Files
+~$*.xlsx
+~$*.xls
+~$*.csv
+*.lock
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor Configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Python / Environment Artifacts (if auxiliary analysis scripts are used)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
