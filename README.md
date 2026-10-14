@@ -100,6 +100,8 @@ Explore the fully interactive, cloud-hosted visualization on Tableau Public:
 .
 ├── .gitignore                     # Git ignore rules for Tableau cache & extract files
 ├── README.md                      # Executive portfolio overview and business insights
+├── docs/
+│   └── Akash_Yadav_Roll_No_66_Project_Documentation.pdf # Complete project documentation report
 ├── data/
 │   └── DATA_DICTIONARY.md         # Data schema, field definitions, and metric formulas
 ├── dashboards/
@@ -107,6 +109,8 @@ Explore the fully interactive, cloud-hosted visualization on Tableau Public:
 └── images/
     └── README.md                  # High-resolution screenshot storage & guidelines
 ```
+
+> 📄 **Project Documentation**: Download the complete report at [Akash_Yadav_Roll_No_66_Project_Documentation.pdf](docs/Akash_Yadav_Roll_No_66_Project_Documentation.pdf).
 
 ---
 
