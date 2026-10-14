@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="48" height="48" rx="12" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5" />
+  
+  <!-- Food Cloche / Dome -->
+  <path d="M12 28C12 21.3726 17.3726 16 24 16C30.6274 16 36 21.3726 36 28H12Z" fill="url(#primaryGrad)" />
+  <path d="M10 29C10 28.4477 10.4477 28 11 28H37C37.5523 28 38 28.4477 38 29V30C38 30.5523 37.5523 31 37 31H11C10.4477 31 10 30.5523 10 30V29Z" fill="#C2410C" />
+  <circle cx="24" cy="14" r="2.5" fill="#EA580C" />
+  
+  <!-- Analytics Trend Line inside plate -->
+  <path d="M16 38L21 34L26 36L32 31" stroke="url(#chartGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="32" cy="31" r="2" fill="#0284C7" />
+  <circle cx="21" cy="34" r="1.5" fill="#38BDF8" />
+</svg>

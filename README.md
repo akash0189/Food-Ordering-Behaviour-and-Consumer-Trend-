@@ -98,19 +98,43 @@ Explore the fully interactive, cloud-hosted visualization on Tableau Public:
 
 ```text
 .
-├── .gitignore                     # Git ignore rules for Tableau cache & extract files
+├── app.py                         # Flask web application server
+├── config.py                      # Central configuration (Tableau URLs, metadata)
+├── requirements.txt               # Python package dependencies
 ├── README.md                      # Executive portfolio overview and business insights
+├── .gitignore                     # Git ignore rules
 ├── docs/
 │   └── Akash_Yadav_Roll_No_66_Project_Documentation.pdf # Complete project documentation report
 ├── data/
+│   ├── food_ordering_behavior_dataset.csv # Full dataset (50,000 records)
 │   └── DATA_DICTIONARY.md         # Data schema, field definitions, and metric formulas
+├── tableau/
+│   └── Food Ordering Behaviour and Consumer Trends - Aditya.twbx # Packaged Tableau workbook
 ├── dashboards/
 │   └── README.md                  # Guide on downloading and running the .twbx locally
-└── images/
-    └── README.md                  # High-resolution screenshot storage & guidelines
+├── static/
+│   ├── css/style.css              # Custom styling
+│   ├── images/                    # UI icons and hero images
+│   └── js/main.js                 # Interactive controls and view switcher
+└── templates/
+    ├── base.html                  # Base Jinja2 layout
+    └── index.html                 # Main dashboard presentation page
 ```
 
 > 📄 **Project Documentation**: Download the complete report at [Akash_Yadav_Roll_No_66_Project_Documentation.pdf](docs/Akash_Yadav_Roll_No_66_Project_Documentation.pdf).
+
+---
+
+## 🚀 Running the Web Application Locally
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Start the application
+python app.py
+```
+Open **[http://127.0.0.1:5000](http://127.0.0.1:5000)** in your browser.
 
 ---
 

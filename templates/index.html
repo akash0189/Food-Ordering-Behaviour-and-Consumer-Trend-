@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="project-banner" aria-labelledby="projectBannerTitle">
+  <div class="project-banner-overlay">
+    <div class="container">
+      <p class="project-banner-kicker"><i class="fa-solid fa-utensils"></i> Tableau Public Analytics Project</p>
+      <h1 id="projectBannerTitle">Food Ordering Behaviour <span>&amp; Consumer Trends</span></h1>
+    </div>
+  </div>
+</section>
+
+<section class="hero-section" id="home">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fa-solid fa-utensils"></i><span>Tableau Business Intelligence Study</span></div>
+      <h2 class="hero-title">Explore the <span class="gradient-text">Food Ordering Analysis</span></h2>
+      <p class="hero-description">Explore this food ordering analysis through the published Tableau Public dashboard and its interactive story. The Flask application preserves the workbook’s native filters, navigation, and interactions.</p>
+      <div class="hero-ctas">
+        <a href="#dashboard" class="btn btn-primary"><i class="fa-solid fa-chart-line"></i><span>Explore Dashboard</span></a>
+        <a href="#story" class="btn btn-outline"><i class="fa-solid fa-book-open"></i><span>Interactive Story</span></a>
+        <a href="#insights" class="btn btn-secondary"><i class="fa-solid fa-lightbulb"></i><span>Key Insights</span></a>
+      </div>
+    </div>
+    <aside class="hero-card-showcase" aria-label="Project overview">
+      <div class="glass-card">
+        <div class="showcase-header"><span class="showcase-tag"><i class="fa-solid fa-chart-pie"></i> Flask + Tableau Public</span><span class="showcase-badge-pulse"><span class="pulse-dot"></span>Interactive</span></div>
+        <div class="metrics-preview-grid">
+          <div class="metric-mini-box"><span class="mini-label">Dashboard</span><span class="mini-value">Explore</span><span class="mini-sub">Use Tableau filters and tooltips</span></div>
+          <div class="metric-mini-box"><span class="mini-label">Story</span><span class="mini-value">Discover</span><span class="mini-sub">Move through native story points</span></div>
+          <div class="metric-mini-box"><span class="mini-label">Insights</span><span class="mini-value">Review</span><span class="mini-sub">Eight analysis topics</span></div>
+          <div class="metric-mini-box"><span class="mini-label">Workbook</span><span class="mini-value">Live</span><span class="mini-sub">Published on Tableau Public</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-alt" id="dashboard">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-pill"><i class="fa-solid fa-chart-column"></i> Tableau Dashboard</span>
+      <h2 class="section-title">Interactive Dashboard</h2>
+      <p class="section-subtitle">Explore the published Tableau dashboard directly in this Flask application. Tableau’s filters, tooltips, and interactions remain available in the embedded view.</p>
+    </div>
+    <div class="viz-control-toolbar">
+      <span class="selector-label"><i class="fa-solid fa-chart-pie"></i> Dashboard 1</span>
+      <div class="viz-action-buttons"><a href="{{ config.TABLEAU_DASHBOARD_URL }}" target="_blank" rel="noopener noreferrer" class="viz-action-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i><span>Open in Tableau</span></a></div>
+    </div>
+    <div class="tableau-card-container">
+      <div class="tableau-loader" id="dashboardLoader"><div class="spinner"></div><span class="loader-text">Loading interactive Tableau dashboard…</span></div>
+      <tableau-viz id="tableauDashboardViz" class="tableau-viz-element" src="{{ config.TABLEAU_DASHBOARD_URL }}" toolbar="bottom" hide-tabs device="default"></tableau-viz>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="story">
+  <div class="container story-layout">
+    <div class="section-header">
+      <span class="section-pill"><i class="fa-solid fa-book-bookmark"></i> Data Storytelling</span>
+      <h2 class="section-title">Tableau Interactive Story</h2>
+      <p class="section-subtitle">The Tableau Story presents the major findings from the food ordering analysis. Use the Tableau story navigation within the view to move through the analysis.</p>
+    </div>
+    <div class="story-intro-card"><div class="story-intro-icon"><i class="fa-solid fa-book-open-reader"></i></div><div class="story-intro-text"><h3>Native Tableau story points</h3><p>This is the published story from the same workbook as the dashboard, embedded with Tableau’s official Embedding API v3.</p></div></div>
+    <div class="viz-control-toolbar">
+      <span class="selector-label"><i class="fa-solid fa-book"></i> Interactive Story</span>
+      <div class="viz-action-buttons"><a href="{{ config.TABLEAU_STORY_URL }}" target="_blank" rel="noopener noreferrer" class="viz-action-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i><span>Open in Tableau</span></a></div>
+    </div>
+    <div class="tableau-card-container story-tableau-container">
+      <div class="tableau-loader" id="storyLoader"><div class="spinner"></div><span class="loader-text">Loading Tableau interactive story…</span></div>
+      <tableau-viz id="tableauStoryViz" class="tableau-viz-element" src="{{ config.TABLEAU_STORY_URL }}" toolbar="bottom" hide-tabs device="default"></tableau-viz>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="insights">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-pill"><i class="fa-solid fa-lightbulb"></i> Workbook Topics</span>
+      <h2 class="section-title">Key Insights</h2>
+      <p class="section-subtitle">The following themes are the eight insights defined in the Tableau project.</p>
+    </div>
+    <div class="insights-grid">
+      {% set insights = [
+        ('fa-map-location-dot', 'Regional Flavor', 'Flavors Across Cities', 'Each city reveals distinct cuisine preferences shaping local demand.'),
+        ('fa-users', 'Demographics', 'Order Distribution by Age Group', 'Adults lead order volumes, especially in casual dining.'),
+        ('fa-user-group', 'Dining Dynamics', 'Orders by Company Type & Meal', 'Corporate orders peak during lunch and dinner hours.'),
+        ('fa-star-half-stroke', 'Satisfaction', 'Customer Rating by Meal Type', 'Dinner and lunch earn the highest satisfaction ratings.'),
+        ('fa-chart-pie', 'Revenue', 'Revenue Contribution by Meal Type', 'Dinner drives the largest share of total revenue.'),
+        ('fa-utensils', 'Cuisine Affinity', 'Customer Preferences Across Cuisines', 'North and South Indian cuisines dominate overall choices.'),
+        ('fa-city', 'Geographic Volume', 'Cities by Order Volume', 'Bangalore records the highest food order activity.'),
+        ('fa-stopwatch', 'Delivery', 'Delivery Time Distribution', 'Delivery times remain consistent across major cities.')
+      ] %}
+      {% for icon, category, title, description in insights %}
+      <article class="insight-card">
+        <div class="insight-card-header"><div class="insight-icon-box {% if loop.index is divisibleby 4 %}indigo{% elif loop.index is divisibleby 3 %}green{% elif loop.index is even %}blue{% else %}orange{% endif %}"><i class="fa-solid {{ icon }}"></i></div><span class="insight-category-tag">{{ category }}</span></div>
+        <h3 class="insight-title">{{ title }}</h3>
+        <p class="insight-text">{{ description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

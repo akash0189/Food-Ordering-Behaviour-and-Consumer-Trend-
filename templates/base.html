@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ config.PROJECT_TITLE }} | Tableau Analytics Dashboard</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Interactive dashboard and data analytics for Food Ordering Behaviour and Consumer Trends, built with Flask and Tableau Public.">
+  <meta name="keywords" content="Tableau Public, Food Ordering Analytics, Consumer Trends, Data Visualization, Flask, College Project">
+  <meta name="author" content="{{ config.STUDENT_NAME }}">
+  
+  <meta property="og:title" content="{{ config.PROJECT_TITLE }}">
+  <meta property="og:description" content="Interactive food ordering analysis with Tableau Public visualizations in a Flask application.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/logo.svg') }}">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- Tableau Embedding API v3 -->
+  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+<body>
+
+  <!-- ================= Site Header & Navbar ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#home" class="brand-link" id="brandHomeLink">
+        <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Food Ordering Analytics Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">FlavorTrends</span>
+          <span class="brand-subtitle">Tableau Analytics</span>
+        </div>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link {% if active_tab == 'home' %}active{% endif %}" id="navHome">Home</a></li>
+          <li><a href="#dashboard" class="nav-link {% if active_tab == 'dashboard' %}active{% endif %}" id="navDashboard">Dashboard</a></li>
+          <li><a href="#story" class="nav-link {% if active_tab == 'story' %}active{% endif %}" id="navStory">Story</a></li>
+          <li><a href="#insights" class="nav-link {% if active_tab == 'insights' %}active{% endif %}" id="navInsights">Insights</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="{{ config.TABLEAU_PUBLIC_PROFILE_URL }}" target="_blank" rel="noopener noreferrer" class="tableau-pill-btn" id="headerTableauBtn">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Tableau Public</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= Main Body Content ================= -->
+  <main id="mainContent">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ================= Site Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-link">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="FlavorTrends Logo" class="brand-logo-img">
+            <div class="brand-text">
+              <span class="brand-title">{{ config.PROJECT_TITLE }}</span>
+              <span class="brand-subtitle">Academic Analytics Demonstration</span>
+            </div>
+          </div>
+          <p class="footer-desc">A Flask college project that integrates an interactive Tableau Public dashboard and story about food ordering behaviour and consumer trends.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home" class="footer-link">Overview & Hero</a></li>
+            <li><a href="#dashboard" class="footer-link">Interactive Dashboard</a></li>
+            <li><a href="#story" class="footer-link">Tableau Storyboard</a></li>
+            <li><a href="#insights" class="footer-link">Key Findings & Insights</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Technologies Used</h4>
+          <ul class="footer-links">
+            <li><span class="footer-link"><i class="fa-brands fa-python" style="margin-right: 8px; color: #38bdf8;"></i> Python Flask Backend</span></li>
+            <li><span class="footer-link"><i class="fa-solid fa-chart-line" style="margin-right: 8px; color: var(--primary-600);"></i> Tableau Public Embedding API v3</span></li>
+            <li><span class="footer-link"><i class="fa-brands fa-html5" style="margin-right: 8px; color: #f97316;"></i> Modern HTML5 & Semantic Web</span></li>
+            <li><span class="footer-link"><i class="fa-brands fa-css3-alt" style="margin-right: 8px; color: #0284c7;"></i> Vanilla CSS3 Custom Design System</span></li>
+            <li><span class="footer-link"><i class="fa-brands fa-js" style="margin-right: 8px; color: #eab308;"></i> Responsive JavaScript ES6+</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project Details</h4>
+          <ul class="footer-links">
+            <li><span class="footer-link"><i class="fa-solid fa-user-graduate" style="margin-right: 6px; color: var(--primary-600);"></i> Author: {{ config.STUDENT_NAME }}</span></li>
+            <li><span class="footer-link"><i class="fa-solid fa-chart-line" style="margin-right: 6px; color: var(--accent-blue);"></i> Interactive Tableau Public workbook</span></li>
+            <li><a href="{{ config.TABLEAU_PUBLIC_PROFILE_URL }}" target="_blank" rel="noopener noreferrer" class="footer-link" style="color: var(--primary-600); font-weight: 600;">
+              <i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 6px;"></i> Live Tableau Public Workbook
+            </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; {{ config.ACADEMIC_YEAR }} <strong>{{ config.PROJECT_TITLE }}</strong> &bull; College Project Demonstration.</p>
+        <p>Built with <strong>Python Flask</strong>, <strong>Vanilla CSS</strong>, <strong>JavaScript</strong>, and <strong>Tableau Embedding API v3</strong>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Logic -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
